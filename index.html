@@ -59,16 +59,36 @@ const name = prompt("กรอกชื่อ");
 
 if(!name) return;
 
-alert(
-"สั่งซื้อสำเร็จ\n\n"+
-"ชื่อ: "+name+
-"\nเมนู: "+menu+
-"\nราคา: "+price+" บาท"
-);
+const phone = prompt("กรอกเบอร์โทร");
+
+if(!phone) return;
+
+fetch("https://script.google.com/macros/s/AKfycbzrILa-eqSZA3g5AQEFsCYt3Co7PtoXKF6PYvB_hqsyvh9_JUeSLjDlLqYSEQobC5FH/exec",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name:name,
+phone:phone,
+items:menu,
+total:price
+})
+
+})
+
+.then(()=>{
+alert("ส่งออเดอร์เรียบร้อย");
+})
+
+.catch(()=>{
+alert("เกิดข้อผิดพลาด");
+});
 
 }
-
-</script>
 
 </body>
 </html>
