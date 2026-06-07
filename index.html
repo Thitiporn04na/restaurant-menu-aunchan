@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ร้านอาหารของฉัน</title>
+
+<style>
+body{
+font-family:sans-serif;
+max-width:600px;
+margin:auto;
+padding:20px;
+}
+
+.menu{
+border:1px solid #ddd;
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+}
+
+button{
+background:#28a745;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<h1>🍜 เมนูอาหาร</h1>
+
+<div class="menu">
+<h3>กะเพราไก่</h3>
+<p>50 บาท</p>
+<button onclick="orderFood('กะเพราไก่',50)">
+สั่งอาหาร
+</button>
+</div>
+
+<div class="menu">
+<h3>ข้าวผัด</h3>
+<p>60 บาท</p>
+<button onclick="orderFood('ข้าวผัด',60)">
+สั่งอาหาร
+</button>
+</div>
+
+<script>
+
+function orderFood(menu,price){
+
+const name = prompt("กรอกชื่อ");
+
+if(!name) return;
+
+alert(
+"สั่งซื้อสำเร็จ\n\n"+
+"ชื่อ: "+name+
+"\nเมนู: "+menu+
+"\nราคา: "+price+" บาท"
+);
+
+}
+
+</script>
+
+</body>
+</html>
